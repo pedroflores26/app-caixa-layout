@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="caixa_blue">#005CA9</color>
+    <color name="caixa_blue_dark">#00467F</color>
+    <color name="caixa_orange">#F39200</color>
+    <color name="background">#F2F4F7</color>
+    <color name="white">#FFFFFF</color>
+    <color name="text_primary">#1F2937</color>
+    <color name="text_secondary">#6B7280</color>
+    <color name="divider">#E5E7EB</color>
+</resources>

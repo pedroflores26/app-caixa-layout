@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".MainActivity">
+
+    <!-- ===== CABEÇALHO AZUL ===== -->
+    <View
+        android:id="@+id/bgHeader"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/caixa_blue"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/tvSaldoValor" />
+
+    <TextView
+        android:id="@+id/tvAvatar"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/bg_avatar"
+        android:gravity="center"
+        android:text="M"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tvSaudacao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:text="Olá, Maria"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="@id/tvAvatar"
+        app:layout_constraintBottom_toBottomOf="@id/tvAvatar"
+        app:layout_constraintStart_toEndOf="@id/tvAvatar" />
+
+    <TextView
+        android:id="@+id/tvIconNotificacao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:text="🔔"
+        android:textSize="22sp"
+        app:layout_constraintTop_toTopOf="@id/tvAvatar"
+        app:layout_constraintBottom_toBottomOf="@id/tvAvatar"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/tvIconOlho"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:text="👁"
+        android:textSize="22sp"
+        app:layout_constraintTop_toTopOf="@id/tvAvatar"
+        app:layout_constraintBottom_toBottomOf="@id/tvAvatar"
+        app:layout_constraintEnd_toStartOf="@id/tvIconNotificacao" />
+
+    <!-- ===== CARD DE SALDO (invade o cabeçalho) ===== -->
+    <View
+        android:id="@+id/cardSaldo"
+        android:layout_width="0dp"
+        android:layout_height="140dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/bg_card"
+        android:elevation="4dp"
+        app:layout_constraintTop_toBottomOf="@id/tvAvatar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/tvSaldoLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:elevation="5dp"
+        android:text="Saldo disponível"
+        android:textColor="@color/text_secondary"
+        android:textSize="14sp"
+        app:layout_constraintTop_toTopOf="@id/cardSaldo"
+        app:layout_constraintStart_toStartOf="@id/cardSaldo" />
+
+    <TextView
+        android:id="@+id/tvSaldoValor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:elevation="5dp"
+        android:text="R$ 1.250,00"
+        android:textColor="@color/text_primary"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/tvSaldoLabel"
+        app:layout_constraintStart_toStartOf="@id/tvSaldoLabel" />
+
+    <View
+        android:id="@+id/divisorSaldo"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="14dp"
+        android:background="@color/divider"
+        android:elevation="5dp"
+        app:layout_constraintBottom_toTopOf="@id/tvExtrato"
+        app:layout_constraintStart_toStartOf="@id/cardSaldo"
+        app:layout_constraintEnd_toEndOf="@id/cardSaldo" />
+
+    <TextView
+        android:id="@+id/tvExtrato"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="14dp"
+        android:elevation="5dp"
+        android:text="Ver extrato  ›"
+        android:textColor="@color/caixa_blue"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/cardSaldo"
+        app:layout_constraintStart_toStartOf="@id/tvSaldoLabel" />
+
+    <!-- ===== AÇÕES RÁPIDAS (cadeia horizontal) ===== -->
+    <TextView
+        android:id="@+id/btnPix"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="28dp"
+        android:background="@drawable/bg_circle"
+        android:gravity="center"
+        android:text="⚡"
+        android:textSize="26sp"
+        app:layout_constraintTop_toBottomOf="@id/cardSaldo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btnPagar"
+        app:layout_constraintHorizontal_chainStyle="spread_inside" />
+
+    <TextView
+        android:id="@+id/btnPagar"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:background="@drawable/bg_circle"
+        android:gravity="center"
+        android:text="▦"
+        android:textSize="26sp"
+        app:layout_constraintTop_toTopOf="@id/btnPix"
+        app:layout_constraintStart_toEndOf="@id/btnPix"
+        app:layout_constraintEnd_toStartOf="@id/btnTransferir" />
+
+    <TextView
+        android:id="@+id/btnTransferir"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:background="@drawable/bg_circle"
+        android:gravity="center"
+        android:text="⇄"
+        android:textSize="26sp"
+        app:layout_constraintTop_toTopOf="@id/btnPix"
+        app:layout_constraintStart_toEndOf="@id/btnPagar"
+        app:layout_constraintEnd_toStartOf="@id/btnCartoes" />
+
+    <TextView
+        android:id="@+id/btnCartoes"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/bg_circle"
+        android:gravity="center"
+        android:text="💳"
+        android:textSize="24sp"
+        app:layout_constraintTop_toTopOf="@id/btnPix"
+        app:layout_constraintStart_toEndOf="@id/btnTransferir"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/lblPix"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Pix"
+        android:textColor="@color/text_primary"
+        android:textSize="13sp"
+        app:layout_constraintTop_toBottomOf="@id/btnPix"
+        app:layout_constraintStart_toStartOf="@id/btnPix"
+        app:layout_constraintEnd_toEndOf="@id/btnPix" />
+
+    <TextView
+        android:id="@+id/lblPagar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Pagar"
+        android:textColor="@color/text_primary"
+        android:textSize="13sp"
+        app:layout_constraintTop_toBottomOf="@id/btnPagar"
+        app:layout_constraintStart_toStartOf="@id/btnPagar"
+        app:layout_constraintEnd_toEndOf="@id/btnPagar" />
+
+    <TextView
+        android:id="@+id/lblTransferir"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Transferir"
+        android:textColor="@color/text_primary"
+        android:textSize="13sp"
+        app:layout_constraintTop_toBottomOf="@id/btnTransferir"
+        app:layout_constraintStart_toStartOf="@id/btnTransferir"
+        app:layout_constraintEnd_toEndOf="@id/btnTransferir" />
+
+    <TextView
+        android:id="@+id/lblCartoes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Cartões"
+        android:textColor="@color/text_primary"
+        android:textSize="13sp"
+        app:layout_constraintTop_toBottomOf="@id/btnCartoes"
+        app:layout_constraintStart_toStartOf="@id/btnCartoes"
+        app:layout_constraintEnd_toEndOf="@id/btnCartoes" />
+
+    <!-- ===== BANNER PROMOCIONAL ===== -->
+    <View
+        android:id="@+id/bannerPromo"
+        android:layout_width="0dp"
+        android:layout_height="120dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="28dp"
+        android:background="@drawable/bg_banner"
+        app:layout_constraintTop_toBottomOf="@id/lblPix"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/tvBannerTitulo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="16dp"
+        android:text="Crédito com taxa especial para você"
+        android:textColor="@color/white"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="@id/bannerPromo"
+        app:layout_constraintStart_toStartOf="@id/bannerPromo"
+        app:layout_constraintEnd_toEndOf="@id/bannerPromo" />
+
+    <TextView
+        android:id="@+id/btnSaibaMais"
+        android:layout_width="wrap_content"
+        android:layout_height="36dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/bg_button_orange"
+        android:gravity="center"
+        android:paddingStart="24dp"
+        android:paddingEnd="24dp"
+        android:text="Saiba mais"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/bannerPromo"
+        app:layout_constraintStart_toStartOf="@id/tvBannerTitulo" />
+
+    <!-- ===== BARRA DE NAVEGAÇÃO INFERIOR ===== -->
+    <View
+        android:id="@+id/bgNav"
+        android:layout_width="0dp"
+        android:layout_height="64dp"
+        android:background="@color/white"
+        android:elevation="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/navInicio"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:elevation="9dp"
+        android:gravity="center"
+        android:text="🏠\nInício"
+        android:textColor="@color/caixa_blue"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="@id/bgNav"
+        app:layout_constraintBottom_toBottomOf="@id/bgNav"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/navExtrato"
+        app:layout_constraintHorizontal_weight="1" />
+
+    <TextView
+        android:id="@+id/navExtrato"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:elevation="9dp"
+        android:gravity="center"
+        android:text="🧾\nExtrato"
+        android:textColor="@color/text_secondary"
+        android:textSize="12sp"
+        app:layout_constraintTop_toTopOf="@id/bgNav"
+        app:layout_constraintBottom_toBottomOf="@id/bgNav"
+        app:layout_constraintStart_toEndOf="@id/navInicio"
+        app:layout_constraintEnd_toStartOf="@id/navCartoes"
+        app:layout_constraintHorizontal_weight="1" />
+
+    <TextView
+        android:id="@+id/navCartoes"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:elevation="9dp"
+        android:gravity="center"
+        android:text="💳\nCartões"
+        android:textColor="@color/text_secondary"
+        android:textSize="12sp"
+        app:layout_constraintTop_toTopOf="@id/bgNav"
+        app:layout_constraintBottom_toBottomOf="@id/bgNav"
+        app:layout_constraintStart_toEndOf="@id/navExtrato"
+        app:layout_constraintEnd_toStartOf="@id/navMais"
+        app:layout_constraintHorizontal_weight="1" />
+
+    <TextView
+        android:id="@+id/navMais"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:elevation="9dp"
+        android:gravity="center"
+        android:text="☰\nMais"
+        android:textColor="@color/text_secondary"
+        android:textSize="12sp"
+        app:layout_constraintTop_toTopOf="@id/bgNav"
+        app:layout_constraintBottom_toBottomOf="@id/bgNav"
+        app:layout_constraintStart_toEndOf="@id/navCartoes"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_weight="1" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

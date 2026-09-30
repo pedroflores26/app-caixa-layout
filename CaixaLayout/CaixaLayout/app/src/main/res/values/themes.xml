@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.CaixaLayout" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/caixa_blue</item>
+        <item name="colorPrimaryDark">@color/caixa_blue_dark</item>
+        <item name="android:statusBarColor">@color/caixa_blue</item>
+        <item name="android:windowLightStatusBar">false</item>
+    </style>
+</resources>
